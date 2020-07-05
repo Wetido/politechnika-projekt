@@ -4,8 +4,8 @@ import GhostContentAPI from "@tryghost/content-api";
 const api = new GhostContentAPI({
 
     url: "http://localhost:2368",
-    key: "5665959d49c5e0f133355272b4",
-    version: "v3"
+    key: "",
+    version: "v3",
 });
 
 //http://localhost:2368
@@ -35,6 +35,16 @@ export async function getSinglePost(postSlug) {
     return await api.authors
       .read({
         slug: authorSlug
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
+
+  export async function getPages(pageSlug) {
+    return await api.pages
+      .read({
+        slug: pageSlug
       })
       .catch(err => {
         console.error(err);

@@ -6,29 +6,45 @@ const PostPage = (props) => {
     // Render post title and content in the page from props
     return (
       <body>
-        <main>
-          <div>
-            <h1>{props.post.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: props.post.html }} />
-          </div>
-        </main>
+        <div class = "container">
+          <main>
+              <h1>{props.post.title}</h1>
+              <div class = "content">
+                <div dangerouslySetInnerHTML={{ __html: props.post.html }} />
+              </div>
+          </main>
+        </div>
+
 
 
       <style jsx>{`
 
+        heder { 
+
+          height: 15em;
+
+        }
+
+        h1{
+
+          color: white;
+          maring-bottom: 1em
+        }
+
+        .content {
+
+          background: white;
+          border-radius: 1em;
+          padding: 1em;
+
+        }
+
+
+        .content img{
+          width: 1%;
+        }
+
         
-        body {
-          font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
-            'Arial', sans-serif;
-          padding: 20px 20px 60px;
-          max-width: 680px;
-          margin: 0 auto;
-        }
-
-        .kg-image {
-
-          visibility: hidden;
-        }
 
       `}</style>
 

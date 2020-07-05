@@ -20,12 +20,12 @@ const IndexPage = (props) => (
               <li class = "navbar-li"><  ><a class = "navbar-a">Aktualnosci
                 </a></></li>
 
-              <li class = "navbar-li"><  ><a class = "navbar-a">Galeria
-                </a></></li>
+              <li class = "navbar-li"><Link href={`/gallery`}  ><a class = "navbar-a">Galeria
+                </a></Link></li>
 
               <li class = "navbar-li"><  ><a class = "navbar-a">Informacje
                 </a></></li>
-
+                
             </ul>
           </nav>
         </div>
