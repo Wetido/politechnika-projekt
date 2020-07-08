@@ -28,6 +28,14 @@ const GalleryPage = (props) => {
             padding: 5px;
         }
 
+        img{
+
+            width: 100%;
+            height: 100%;
+
+            max-height: 15vw;
+        }
+
 
 
         `}</style>
@@ -39,7 +47,7 @@ const GalleryPage = (props) => {
 
   
   GalleryPage.getInitialProps = async () => {
-    const pages = await getPages('gallery');
+    const pages = await getPages('galeria');
     return { pages: pages }
   };
   
