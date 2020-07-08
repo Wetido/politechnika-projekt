@@ -10,7 +10,7 @@ const GalleryPage = (props) => {
                  <div dangerouslySetInnerHTML={{ __html: props.pages.html }} />
                 </article>
             </div>
-z
+
 
         
          <style >{`
@@ -23,7 +23,9 @@ z
 
         figure{
 
-            flex-wrap: nowrap;
+            float: left;
+            width: 20%;
+            padding: 5px;
         }
 
 
