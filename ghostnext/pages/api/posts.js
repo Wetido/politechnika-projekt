@@ -4,7 +4,7 @@ import GhostContentAPI from "@tryghost/content-api";
 const api = new GhostContentAPI({
 
     url: "http://localhost:2368",
-    key: "1f38f9c09ee6251b01b3051525",
+    key: "c340c8235a0d694e84c64e832b",
     version: "v3",
 });
 
@@ -14,7 +14,8 @@ const api = new GhostContentAPI({
 export async function getPosts() {
     return await api.posts
       .browse({
-        limit: "all"
+        limit: "all",
+        filter : 'tags:getting-started'
       })
       .catch(err => {
         console.error(err);
@@ -24,12 +25,35 @@ export async function getPosts() {
 export async function getSinglePost(postSlug) {
     return await api.posts
       .read({
-        slug: postSlug
+        slug: postSlug,
+
       })
       .catch(err => {
         console.error(err);
       });
   }
+
+  export async function getPostsByTag(postTag) {
+    return await api.posts
+      .browse({
+        filter : 'tags:galeria' //zrobione na szywno do poprawy filtrownaie po zmiennej
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
+
+  export async function getSinglePostByTag(postSlug) { //TO DO
+    // return await api.posts
+    //   .read({
+    //     slug: postSlug
+    //   })
+    //   .catch(err => {
+    //     console.error(err);
+    //   });
+  }
+
+
 
   export async function getAuthor(authorSlug) {
     return await api.authors

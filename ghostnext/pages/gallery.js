@@ -1,42 +1,62 @@
-import { getPages } from './api/posts';
+import { getPages, getPostsByTag } from './api/posts';
+import Link from 'next/link';
 
+//STRONA GŁÓWNA GALERII
 
 const GalleryPage = (props) => {
     return (
 
         <body>
+
+            <p1>Znajdujemy się w galerii</p1> 
+
             <div>
-              <article class = "gallery">
-                 <div dangerouslySetInnerHTML={{ __html: props.pages.html }} />
-                </article>
+                <ul class = "post-ul">
+                    <h2>Najnowsze posty</h2>
+                        {props.gallerys.map(gallery => (
+
+                        <Link href={`galeria/[slug]`} as={`galeria/${gallery.slug}`}>
+            
+                            <li key={gallery.id} class="post-li">
+                                <a class = "post-a"> <img alt="" src={gallery.feature_image}></img></a>
+
+                            <div>  
+                                <a class = "post-a">{gallery.title}</a>
+                                <p>{gallery.excerpt}</p>  
+                            </div>
+
+                            </li>
+
+                        </Link>
+            
+                        ))}
+                 </ul>
+
             </div>
 
-
-        
          <style >{`
 
-        article{
 
-            display: flex;
+            .post-ul{
 
-        }
+                list-style-type: none;
+                padding: 2em 4.5em 4.5em 4.5em;
+                display: wrap;
+            }
 
-        figure{
+            .post-li{
 
-            float: left;
-            width: 20%;
-            padding: 5px;
-        }
+                background: white;
+                border-radius: 1em;
+                padding: 3em; 
+                margin-bottom: 3em;
+                box-shadow: 15px 21px 40px 0px rgba(0,0,0,0.34);
+            }
 
-        img{
+            .post-li:hover{
 
-            width: 100%;
-            height: 100%;
-
-            max-height: 15vw;
-        }
-
-
+                box-shadow: 30px 40px 40px 0px rgba(0,0,0,0.34);
+            }
 
         `}</style>
         </body>
@@ -47,8 +67,8 @@ const GalleryPage = (props) => {
 
   
   GalleryPage.getInitialProps = async () => {
-    const pages = await getPages('galeria');
-    return { pages: pages }
+    const gallerys = await getPostsByTag('galeria');
+    return { gallerys: gallerys }
   };
   
   export default GalleryPage;

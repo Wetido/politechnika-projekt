@@ -1,9 +1,13 @@
 import { getSinglePost } from './api/posts';
 
 
+//GENEROWANIE JAKEIKOLWIEK POSTU GDY MAMY DOSTEP DO JEGO ENDPOINTU
+//NP. USER MOZE WPISAC domena/zdjecia2020 i zostanie mu wyswietlona galeria zdj ze stylami 
+//które są dostępne dla zwykłego postu. Ponieważ style galerii dostępne są pod adresem
+//domena/galeria/2020 i tam znajduje się stylizowanie galerii. Trzeba coś z tym zrobić poprawiajac te endpointy.
+//Tak samo możeny przejść pod adres domena/galeria/welcome i uzyskamy zwykł post w stylu galerii.
 
 const PostPage = (props) => {
-    // Render post title and content in the page from props
     return (
       <body>
         <div class = "container">
@@ -46,6 +50,8 @@ const PostPage = (props) => {
 
         
 
+        
+
       `}</style>
 
       </body>
@@ -53,8 +59,6 @@ const PostPage = (props) => {
       )
   }
 
-
-  
   // Pass the page slug over to the "getSinglePost" function
   // In turn passing it to the posts.read() to query the Ghost Content API
   PostPage.getInitialProps = async (params) => {
