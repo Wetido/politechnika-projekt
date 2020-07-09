@@ -1,6 +1,6 @@
 import { getPages, getPostsByTag } from './api/posts';
 import Link from 'next/link';
-import MyApp from '../components/_app';
+import Toolbar from '../components/toolbar';
 
 
 //STRONA GŁÓWNA GALERII
@@ -10,7 +10,7 @@ const GalleryPage = (props) => {
 
         <body>
             
-            <MyApp></MyApp>
+            <Toolbar></Toolbar>
 
 
             <section>

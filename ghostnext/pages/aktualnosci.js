@@ -1,7 +1,7 @@
 import { getPosts, getSinglePost, getAuthor } from './api/posts';
 
 import Link from 'next/link';
-import MyApp from '../components/_app';
+import Toolbar from '../components/toolbar';
 
 
 
@@ -9,7 +9,7 @@ import MyApp from '../components/_app';
 const NewsPage = (props) => (
   <body>
 
-    <MyApp></MyApp>
+    <Toolbar></Toolbar>
 
 
     <section>

@@ -2,14 +2,14 @@ import { getPosts, getSinglePost, getAuthor } from './api/posts';
 
 import Link from 'next/link';
 import { Component } from 'react';
-import MyApp from '../components/_app';
+import Toolbar from '../components/toolbar';
 
 
 
 const IndexPage = (props) => (
   <body>
 
-  <MyApp></MyApp>
+  <Toolbar></Toolbar>
   </body>
   
 );
