@@ -1,4 +1,4 @@
-import { getSinglePost } from './api/posts';
+import { getSinglePost } from '../api/posts';
 
 
 //GENEROWANIE JAKEIKOLWIEK POSTU GDY MAMY DOSTEP DO JEGO ENDPOINTU

@@ -1,5 +1,7 @@
 import { getPages, getPostsByTag } from './api/posts';
 import Link from 'next/link';
+import MyApp from './_app';
+
 
 //STRONA GŁÓWNA GALERII
 
@@ -7,9 +9,12 @@ const GalleryPage = (props) => {
     return (
 
         <body>
+            
+            <MyApp></MyApp>
 
+
+            <section>
             <p1>Znajdujemy się w galerii</p1> 
-
             <div>
                 <ul class = "post-ul">
                     <h2>Najnowsze posty</h2>
@@ -31,12 +36,13 @@ const GalleryPage = (props) => {
             
                         ))}
                  </ul>
-
             </div>
+            </section>
 
          <style >{`
 
 
+            //////////////////GALERIA
             .post-ul{
 
                 list-style-type: none;
@@ -57,6 +63,8 @@ const GalleryPage = (props) => {
 
                 box-shadow: 30px 40px 40px 0px rgba(0,0,0,0.34);
             }
+
+            /////////////////////////
 
         `}</style>
         </body>
