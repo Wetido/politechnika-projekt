@@ -12,8 +12,7 @@ function MyApp({ Component, pageProps }) {
           <div class = "navbar">
 
               <a class = "navbar-a">Politechnika Lubelska</a>
-
-  
+              
             <nav>
               <ul class = "navbar-ul">
                 <li class = "navbar-li"><Link href={'/aktualnosci'}><a class = "navbar-a">Aktualnosci
