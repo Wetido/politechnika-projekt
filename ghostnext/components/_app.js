@@ -10,9 +10,9 @@ function MyApp({ Component, pageProps }) {
     <div class = "container">
       <header>
           <div class = "navbar">
-            <   >
+
               <a class = "navbar-a">Politechnika Lubelska</a>
-            </>
+
   
             <nav>
               <ul class = "navbar-ul">
@@ -22,8 +22,8 @@ function MyApp({ Component, pageProps }) {
                 <li class = "navbar-li"><Link href={`/gallery`}  ><a class = "navbar-a">Galeria
                   </a></Link></li>
   
-                <li class = "navbar-li"><  ><a class = "navbar-a">Informacje
-                  </a></></li>
+                <li class = "navbar-li"><a class = "navbar-a">Informacje
+                  </a> </li>
                   
               </ul>
             </nav>
@@ -31,6 +31,7 @@ function MyApp({ Component, pageProps }) {
         </header>
       </div>
       </section>
+
   
       <style >{`
 

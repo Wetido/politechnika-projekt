@@ -1,6 +1,6 @@
 import { getPages, getPostsByTag } from './api/posts';
 import Link from 'next/link';
-import MyApp from './_app';
+import MyApp from '../components/_app';
 
 
 //STRONA GŁÓWNA GALERII
