@@ -1,11 +1,10 @@
 import Link from 'next/link';
 
-
 function Toolbar({ Component, pageProps }) {
     return ( 
     
-    <body>
-  
+    <div>
+
     <section>
     <div class = "container">
       <header>
@@ -79,7 +78,7 @@ body {
 `}</style>
 
   
-    </body>
+    </div>
     )
   }
   
