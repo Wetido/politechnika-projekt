@@ -10,11 +10,11 @@ function Toolbar({ Component, pageProps }) {
      
         <script dangerouslySetInnerHTML={{ __html: 
         `
-        const navSlide = () =>{
+        var navSlide = () =>{
           
-          const burger = document.querySelector('.burger');
-          const nav = document.querySelector('.nav-bar');
-          const navLinks = document.querySelectorAll('.nav-bar li');
+          var burger = document.querySelector('.burger');
+          var nav = document.querySelector('.nav-bar');
+          var navLinks = document.querySelectorAll('.nav-bar li');
 
           burger.addEventListener('click', ()=> {
 
@@ -45,7 +45,9 @@ function Toolbar({ Component, pageProps }) {
     <section>
       <nav>
          <div class = "logo">
-           <h4>KNME</h4>
+           
+
+           <Link href={'/'}><h4>KNME</h4></Link>
           </div>
 
           <ul class="nav-bar">

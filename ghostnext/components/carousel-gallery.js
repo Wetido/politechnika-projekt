@@ -18,13 +18,13 @@ function CarouselGallery({ Component, pageProps }) {
         
         <script dangerouslySetInnerHTML={{ __html: 
         `
-        const carouselSlide = document.querySelector('.carousel-slide');
-        const carouselImages = document.querySelectorAll('.carousel-slide img');
+        var carouselSlide = document.querySelector('.carousel-slide');
+        var carouselImages = document.querySelectorAll('.carousel-slide img');
 
-        const prevBtn = document.querySelector('#prevBtn');
-        const nextBtn = document.querySelector('#nextBtn');
+        var prevBtn = document.querySelector('#prevBtn');
+        var nextBtn = document.querySelector('#nextBtn');
 
-        let counter = 1;
+        var counter = 1;
         var size = carouselImages[0].naturalWidth;
 
         console.log(carouselImages);
