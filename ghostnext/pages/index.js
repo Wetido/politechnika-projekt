@@ -1,25 +1,24 @@
 
-
 import React from "react";
-import Toolbar from '../components/toolbar';
 import dynamic from 'next/dynamic';
 
 
-const NoSSRComponent = dynamic(() => 
+const NoSSRGallery = dynamic(() => 
 import("../components/carousel-gallery"), {
-  ssr: false,
-});
+  ssr: false,});
+
+
+const NoSSRToolbar = dynamic( () => 
+import('../components/toolbar'), { ssr: false } )
+
 
 const IndexPage = (props) => (
 
   
   <body>
 
-  <Toolbar></Toolbar>
-
-  <NoSSRComponent></NoSSRComponent>
-
-
+    <NoSSRToolbar/>
+    <NoSSRGallery/>
 
   </body>
   

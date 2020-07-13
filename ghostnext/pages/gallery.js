@@ -1,16 +1,20 @@
 import { getPages, getPostsByTag } from './api/posts';
 import Link from 'next/link';
-import Toolbar from '../components/toolbar';
-
+import dynamic from 'next/dynamic';
 
 //STRONA GŁÓWNA GALERII
+
+const NoSSRToolbar = dynamic(() => 
+import("../components/toolbar"), {
+  ssr: false,
+});
 
 const GalleryPage = (props) => {
     return (
 
         <body>
             
-            <Toolbar></Toolbar>
+            <NoSSRToolbar></NoSSRToolbar>
 
 
             <section>

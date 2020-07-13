@@ -8,7 +8,6 @@ import p6 from '../images/6.jpg';
 import p7 from '../images/7.jpg';
 
 
-import { NextScript } from '@engineerapart/nextscript';
 import Head from 'next/head';
 
 function CarouselGallery({ Component, pageProps }) {
@@ -125,7 +124,7 @@ function CarouselGallery({ Component, pageProps }) {
 
             position: absolute;
             top: 45%;
-            z-index: 10;
+            z-index: 2;
             left: 3%;
             opacity: 0.6;
             color: white;
@@ -136,11 +135,38 @@ function CarouselGallery({ Component, pageProps }) {
 
             position: absolute;
             top: 45%;
-            z-index: 10;
+            z-index: 2;
             right: 3%;
             opacity: 0.6;
             color: white;
             curosr: pointer;
+        }
+
+        
+        @media screen and (max-width: 1200px) {
+            .carousel-container{
+
+                height: 300px;
+            }
+
+            .outer-container{
+
+                padding: 60px 150px 0 150px ;
+    
+            }
+        }
+
+        @media screen and (max-width: 850px) {
+            .carousel-container{
+
+                height: 250px;
+            }
+
+            .outer-container{
+
+                padding: 50px 100px 0 100px ;
+    
+            }
         }
 
         

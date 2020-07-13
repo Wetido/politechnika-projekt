@@ -1,15 +1,20 @@
 import { getPosts, getSinglePost, getAuthor } from './api/posts';
 
 import Link from 'next/link';
-import Toolbar from '../components/toolbar';
+import dynamic from 'next/dynamic';
 
+
+const NoSSRToolbar = dynamic(() => 
+import("../components/toolbar"), {
+  ssr: false,
+});
 
 
 
 const NewsPage = (props) => (
   <body>
 
-    <Toolbar></Toolbar>
+    <NoSSRToolbar></NoSSRToolbar>
 
 
     <section>

@@ -1,90 +1,212 @@
 import Link from 'next/link';
+import Head from 'next/head';
 
 function Toolbar({ Component, pageProps }) {
     return ( 
     
-    <div>
+    <body>
 
+      <Head>
+     
+        <script dangerouslySetInnerHTML={{ __html: 
+        `
+        const navSlide = () =>{
+          
+          const burger = document.querySelector('.burger');
+          const nav = document.querySelector('.nav-bar');
+          const navLinks = document.querySelectorAll('.nav-bar li');
+
+          burger.addEventListener('click', ()=> {
+
+            nav.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+          })
+
+          navLinks.forEach((link) =>{
+            if( link.style.animation){
+              link.style.animation = '';
+            } else {
+
+              link.style.animation = 'navLinkFade 0.5s ease forwards 0.8s';
+            }
+
+            
+          });
+        }
+
+        navSlide();
+
+
+        ` }} />
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet"/>
+
+      </Head>
     <section>
-    <div class = "container">
-      <header>
-          <div class = "navbar">
-
-              <a class = "navbar-a">Politechnika Lubelska</a>
-              
-            <nav>
-              <ul class = "navbar-ul">
-                <li class = "navbar-li"><Link href={'/aktualnosci'}><a class = "navbar-a">Aktualnosci
-                  </a></Link></li>
-  
-                <li class = "navbar-li"><Link href={`/gallery`}  ><a class = "navbar-a">Galeria
-                  </a></Link></li>
-  
-                <li class = "navbar-li"><a class = "navbar-a">Informacje
-                  </a> </li>
-                  
-              </ul>
-            </nav>
+      <nav>
+         <div class = "logo">
+           <h4>KNME</h4>
           </div>
-        </header>
-      </div>
+
+          <ul class="nav-bar">
+
+            <li class = "navbar-li"><Link href={'/o-katedrze'}><a class = "navbar-a">O katedrze
+              </a></Link></li>
+
+            <li class = "navbar-li"><Link href={'/aktualnosci'}><a class = "navbar-a">Aktualnosci
+              </a></Link></li>
+  
+             <li class = "navbar-li"><Link href={`/gallery`}  ><a class = "navbar-a">Galeria
+              </a></Link></li>
+  
+            <li class = "navbar-li"><a class = "navbar-a">Kontakt
+               </a> </li>
+                  
+          </ul>
+
+          <div class="burger">
+            <div class="line1"> </div>  
+            <div class="line2"> </div>  
+            <div class="line3"> </div>  
+          </div> 
+        </nav>
       </section>
 
   
       <style >{`
 
-body {
-    font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
-      'Arial', sans-serif;
-    margin: 0 auto;
-  }
+      *{
+        margin: 0px;
+        padding 0px;
+        box-sizing: border-box;
 
-  header {
+      }
 
-    background: pink;
-    padding: 1em 1em 1em 1em;
-    text-align: center;
-    
-  }
+      nav{
 
-  .navbar-a {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 8vh;
+        background-color: rgb(136,136,136);
+        font-family: 'Poppins', sans-serif;
+      }
 
-    text-decoration: none
-    color: white;
-    padding: 0.5em;
-  }
+      .logo{
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size: 22px;
+      }
 
-  .navbar {
+      .nav-bar{
 
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    color: white;
-    text-decoration: none
-  }
+        display:flex;
+        justify-content: space-around;
+        width: 35%;
+      }
 
-  nav{
+      .nav-bar a{
 
-    display: flex;
-  }
+        color: white;
+        text-decoration: none;
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-size: 14px;
+      }
 
-  .navbar-ul {
+      .nav-bar li{
 
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-  }
+        list-style: none;
+      }
+
+      .burger{
+
+        display: none;
+      }
+
+      .burger div{
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px;
+        transition: all 0.3s ease;
+      }
+
+      @media screen and (max-width: 1200px) {
+        .nav-bar{
+          width: 50%;
+        }
+      }
+
+      @media screen and (max-width: 850px) {
+
+        body{
+          overflow-x: hidden;
+        }
+        .nav-bar{
+          position: absolute;
+          right: 0px;
+          height: 92vh;
+          top: 8vh;
+          background-color: rgb(136,136,136);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 25%;
+          transform: translateX(100%);
+          transition: transform 0.5s ease-in;
+          z-index: 10;
+        }
+
+        .nav-bar li{
+
+          opacity: 0;
+        }
+
+        .burger{
+          display:block;
+        }
+      }
+
+      .nav-active{
+
+        transform: translateX(0%);
+      }
+
+      @keyframes navLinkFade{
+
+        from{
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to{
+          opacity: 1;
+          transform: translateX(0px);
+        }
+      }
+
+      .toggle .line1{
+
+        transform: rotate(-48deg) translate(-5.5px,6px);
+      }
+
+      .toggle .line2{
+
+        opacity: 0;
+      }
+
+      .toggle .line3{
+
+        transform: rotate(48deg) translate(-5.5px, -6px);
+      }
 
 `}</style>
 
   
-    </div>
+    </body>
     )
   }
   
-
-  
-  export default Toolbar
-
-
+export default Toolbar;
 
