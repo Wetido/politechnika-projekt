@@ -1,7 +1,8 @@
 
 import React from "react";
 import dynamic from 'next/dynamic';
-
+import Carousel from '../components/new-gallery';
+import Navbar from'../components/Navbar';
 
 const NoSSRGallery = dynamic(() => 
 import("../components/carousel-gallery"), {
@@ -17,8 +18,8 @@ const IndexPage = (props) => (
   
   <body>
 
-    <NoSSRToolbar/>
-    <NoSSRGallery/>
+    <Navbar/>
+    <Carousel/>
 
   </body>
   
