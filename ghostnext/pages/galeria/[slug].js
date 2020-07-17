@@ -39,7 +39,7 @@ const PostPage = (props) => {
       .grid-container {
         columns: 3;
         column-gap: 3rem;
-        width: 75%;
+        width: 85%;
         margin: 0 auto;
       }
 
@@ -80,8 +80,19 @@ const PostPage = (props) => {
       }
 
 
-      @media screen and (max-width: 1200px) {
-        .nav-bar{
+      @media screen and (max-width: 1376px) {
+        .grid-container {
+          columns: 2;
+          column-gap: 2rem;
+          width: 90%;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .grid-container {
+          columns: 1;
+          column-gap: 2rem;
+          width: 70%;
         }
       }
 
