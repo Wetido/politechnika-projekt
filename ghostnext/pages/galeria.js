@@ -1,6 +1,7 @@
 import { getPages, getPostsByTag } from './api/posts';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Navbar from'../components/Navbar';
 
 //STRONA GŁÓWNA GALERII
 
@@ -14,24 +15,20 @@ const GalleryPage = (props) => {
 
         <body>
             
-            <NoSSRToolbar></NoSSRToolbar>
+            <Navbar></Navbar>
 
 
             <section>
-            <p1>Znajdujemy się w galerii</p1> 
             <div>
                 <ul class = "post-ul">
-                    <h2>Najnowsze posty</h2>
                         {props.gallerys.map(gallery => (
 
                         <Link href={`galeria/[slug]`} as={`galeria/${gallery.slug}`}>
             
                             <li key={gallery.id} class="post-li">
-                                <a class = "post-a"> <img alt="" src={gallery.feature_image}></img></a>
 
                             <div>  
                                 <a class = "post-a">{gallery.title}</a>
-                                <p>{gallery.excerpt}</p>  
                             </div>
 
                             </li>
@@ -45,8 +42,6 @@ const GalleryPage = (props) => {
 
          <style >{`
 
-
-            //////////////////GALERIA
             .post-ul{
 
                 list-style-type: none;

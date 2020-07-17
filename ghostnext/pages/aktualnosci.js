@@ -3,6 +3,8 @@ import { getPosts, getSinglePost, getAuthor } from './api/posts';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
+import Navbar from '../components/Navbar'
+
 
 const NoSSRToolbar = dynamic(() => 
 import("../components/toolbar"), {
@@ -14,8 +16,7 @@ import("../components/toolbar"), {
 const NewsPage = (props) => (
   <body>
 
-    <NoSSRToolbar></NoSSRToolbar>
-
+    <Navbar></Navbar>
 
     <section>
     <ul class = "post-ul">

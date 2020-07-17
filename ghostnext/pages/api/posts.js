@@ -4,12 +4,11 @@ import GhostContentAPI from "@tryghost/content-api";
 const api = new GhostContentAPI({
 
     url: "http://localhost:2368",
-    key: "b6e3e0613e9ee79ddf019a3d40",
+    key: "6abb94a5bc5976fc0c9f115315",
     version: "v3",
 });
 
 //http://localhost:2368
-//e1973f50841528f4e984574e85
 
 export async function getPosts() {
     return await api.posts

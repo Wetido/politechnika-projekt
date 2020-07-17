@@ -16,7 +16,9 @@ const Navbar = () => (
     </Head>
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
     <div className="container">
-      <a className="navbar-brand" href="#">KNME</a>
+      <a className="navbar-brand" href="#">
+      <Link href={'/'}><a >KNME</a></Link>
+      </a>
       <div className="collapse navbar-collapse">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
@@ -26,37 +28,23 @@ const Navbar = () => (
             <Link href={'/aktualnosci'}><a className="nav-link">Aktualności</a></Link>
           </li>
           <li className="nav-item">
-            <Link href={'/gallery'}><a className="nav-link">Galeria</a></Link>
+            <Link href={'/galeria'}><a className="nav-link">Galeria</a></Link>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  </div>
-   /*  <style >{`
+
+   <style >{`
         .navbar-brand{
-            color: black;
-        }
-        ul {
-            background: #333;
-            color: #fff;
-            list-style: none;
-            display: flex;
+          text-decoration: none;
         }
 
-        ul li{
-            font-size: 18px;
-            margin-right:60px;
-        }
-        ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
     `}</style> 
-*/
 
 
+  </div>
 );
 
 

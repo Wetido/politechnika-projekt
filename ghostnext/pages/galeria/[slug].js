@@ -1,4 +1,5 @@
 import { getSinglePost } from '../api/posts';
+import Navbar from'../../components/Navbar';
 
 //TU ZNAJDUJE SIĘ POJEDYNCZY POST GALERII
 
@@ -6,32 +7,85 @@ const PostPage = (props) => {
     // Render post title and content in the page from props
     return (
       <body>
-        <div class = "container">
-          <main>
-              <h1>{props.post.title}</h1>
-              <div class = "content">
-                <div dangerouslySetInnerHTML={{ __html: props.post.html }} />
-              </div>
-          </main>
-        </div>
+        <Navbar></Navbar>
+        <main>
+          <h1 class = "title">{props.post.title}</h1>
+          <div class = "grid-container">
+                  <div dangerouslySetInnerHTML={{ __html: props.post.html }} />
+          </div>
+        </main>
 
       <style>{`
 
 
-        figure{
+      .title {
+        padding: 30px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: bold;
+        color: coral;
+      }
 
-          float: left;
-          width: 20%;
-          padding: 5px;
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: sans-serif;
+      }
+      h1 {
+        color: coral;
+      }
+      .grid-container {
+        columns: 3;
+        column-gap: 3rem;
+        width: 75%;
+        margin: 0 auto;
+      }
+
+      figure {
+        width: 150px;
+        margin: 0 1.5rem 1.5rem 0;
+        display: inline-block;
+        width: 100%;
+        border: solid 2px black;
+        padding: 5px;
+        box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+        border-radius: 5px;
+        transition: all .25s ease-in-out;
+      }
+
+      
+      figure:hover img {
+        filter: grayscale(0);
+        padding: 10px;
+      }
+
+      figure:hover {
+        border-color: coral;
+      }
+      
+      img {
+        width: 100%;
+        filter: grayscale(100%);
+        border-radius: 5px;
+        transition: all .25s ease-in-out;
+      }
+
+      figcaption {
+        margin: 5px 0;
+        padding: 0;
+        text-align: center;
+        font-style: italic;
+      }
+
+
+      @media screen and (max-width: 1200px) {
+        .nav-bar{
         }
+      }
 
-        img{
 
-          width: 100%;
-          height: 100%;
-
-          max-height: 15vw;
-        }
 
       `}</style>
 
