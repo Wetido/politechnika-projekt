@@ -37,6 +37,15 @@ const NavbarThird = () => (
     border:none;
 }
 
+.nav-item {
+
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  
+}
+
+
+
 `}</style>
 </div>
 );

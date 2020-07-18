@@ -36,6 +36,7 @@ const PostPage = (props) => {
       h1 {
         color: coral;
       }
+      
       .grid-container {
         columns: 3;
         column-gap: 3rem;

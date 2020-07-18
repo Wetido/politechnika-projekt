@@ -4,16 +4,28 @@ import GhostContentAPI from "@tryghost/content-api";
 const api = new GhostContentAPI({
 
     url: "http://localhost:2368",
-    key: "bbc520fcb17933717d637a1584",
+    key: "6abb94a5bc5976fc0c9f115315",
     version: "v3",
 });
-
+//	6abb94a5bc5976fc0c9f115315
+// bbc520fcb17933717d637a1584 - FILIP
 //http://localhost:2368
 
 export async function getPosts() {
     return await api.posts
       .browse({
         limit: "all",
+        filter : 'tags:getting-started'
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
+
+export async function getIndexPagePosts() {
+    return await api.posts
+      .browse({
+        limit : 3,
         filter : 'tags:getting-started'
       })
       .catch(err => {
