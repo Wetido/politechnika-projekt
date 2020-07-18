@@ -33,14 +33,26 @@ const Carousel = () => (
   <div class="carousel-inner">
         <div class="carousel-item active">
             <img class="d-block w-100" src={p6} alt="First slide"/>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Witajcie w naszej bajce</h5>
+              <p>Spójrzcie jak tu pięknie, dobrobyt aż chce się żyć</p>
+            </div>
         </div>
        
         <div class="carousel-item">
             <img class="d-block w-100" src={p7} alt="Second slide"/>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Witajcie w naszej bajce</h5>
+              <p>Spójrzcie jak tu pięknie, dobrobyt aż chce się żyć</p>
+          </div>
         </div>
         
         <div class="carousel-item">
-        <img class="d-block w-100" src={p3} alt="Third slide"/>
+          <img class="d-block w-100" src={p3} alt="Third slide"/>
+          <div class="carousel-caption d-none d-md-block">
+          <h5>Witajcie w naszej bajce</h5>
+            <p>Spójrzcie jak tu pięknie, dobrobyt aż chce się żyć</p>
+          </div>
         </div>
   </div>
  
@@ -53,16 +65,42 @@ const Carousel = () => (
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+  
 </div>
+
 <style>{`
+.carousel{
+  justify-content:center;
+}
 .carousel-inner{
-padding:10px;
+padding:20px;
+width:100%;
+max-height: 500px !important;
 
 }
+.carousel-inner img{
+  display:inline-block  !important;
+  }
 img {
 
 height:400px;
 border: solid black 1px;
+}
+.item{
+  text-align:center;
+}
+.tales{
+  width:100%
+}
+.carousel-item:before {
+  -webkit-box-shadow: inset 0 0 20rem rgba(0, 0, 0, 1);
+  box-shadow: inset 0 0 20rem rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
 }
 
 `}</style>

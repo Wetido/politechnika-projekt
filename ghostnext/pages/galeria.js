@@ -1,7 +1,7 @@
 import { getPages, getPostsByTag } from './api/posts';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import Navbar from'../components/Navbar';
+import NavbarThird from '../components/Navbar-third';
 
 //STRONA GŁÓWNA GALERII
 
@@ -15,7 +15,7 @@ const GalleryPage = (props) => {
 
         <body>
             
-            <Navbar></Navbar>
+            <NavbarThird/>
 
 
             <section>

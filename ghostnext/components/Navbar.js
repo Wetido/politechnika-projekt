@@ -36,9 +36,10 @@ const Navbar = () => (
   </nav>
 
 
-   <style >{`
+   <style jsx>{`
         .navbar-brand{
           text-decoration: none;
+          color: black;
         }
 
     `}</style> 

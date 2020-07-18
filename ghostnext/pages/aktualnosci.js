@@ -3,7 +3,7 @@ import { getPosts, getSinglePost, getAuthor } from './api/posts';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
-import Navbar from '../components/Navbar'
+import NavbarThird from '../components/Navbar-third';
 
 
 const NoSSRToolbar = dynamic(() => 
@@ -16,7 +16,7 @@ import("../components/toolbar"), {
 const NewsPage = (props) => (
   <body>
 
-    <Navbar></Navbar>
+<NavbarThird/>
 
     <section>
     <ul class = "post-ul">
@@ -26,7 +26,7 @@ const NewsPage = (props) => (
          <Link href={`/aktualnosci/[slug]`} as={`/aktualnosci/${post.slug}`}>
           
             <li key={post.id} class="post-li">
-                <a class = "post-a"> <img alt="" src={post.feature_image}></img></a>
+                <a class = "post-a"> <img class="image-shortcut" alt="" src={post.feature_image}></img></a>
               <div>  
                   <a class = "post-a">{post.title}</a>
                 <p>{post.excerpt}</p>  
@@ -64,11 +64,14 @@ const NewsPage = (props) => (
 
       box-shadow: 30px 40px 40px 0px rgba(0,0,0,0.34);
     }
-
+    .image-shortcut
+    {
+      border-radius: 5em;
+    }
     img {
 
       width: 100%;
-      border-radius: 5em;
+      
     }
 
     .post-a{
@@ -102,7 +105,7 @@ NewsPage.getInitialProps = async () => {
   return { posts: posts }
 }
 
-export default NewsPage
+export default NewsPage;
 
 
 
