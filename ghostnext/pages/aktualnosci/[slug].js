@@ -1,5 +1,6 @@
 import { getSinglePost } from '../api/posts';
-
+import Head from 'next/head';
+import NavbarThird from '../../components/Navbar-third';
 
 //GENEROWANIE JAKEIKOLWIEK POSTU GDY MAMY DOSTEP DO JEGO ENDPOINTU
 //NP. USER MOZE WPISAC domena/zdjecia2020 i zostanie mu wyswietlona galeria zdj ze stylami 
@@ -9,58 +10,42 @@ import { getSinglePost } from '../api/posts';
 
 const PostPage = (props) => {
     return (
-      <body>
-        <div class = "container">
-          <main>
-              <h1>{props.post.title}</h1>
-              <div class = "content">
+      <div>
+          <NavbarThird></NavbarThird>
+
+
+            <div class="articleText">
+                <h1 class="introduction">{props.post.title}</h1>
                 <div dangerouslySetInnerHTML={{ __html: props.post.html }} />
-              </div>
-          </main>
-        </div>
-
-
+            </div>
 
       <style jsx>{`
 
-        heder { 
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+      *{
+        font-family: 'Open Sans';
+        line-height: 170%;
+      }
+      body, p, h1, h2{
+        margin: 0;
+        padding: 0;
+      }
+      
+      .articleText{
 
-          height: 15em;
-
-        }
-
-        h1{
-
-          color: white;
-          maring-bottom: 1em
-        }
-
-        .content {
-
-          background: white;
-          border-radius: 1em;
-          padding: 1em;
-
-        }
-
-
-        .content img{
-          width: 1%;
-        }
-
-        
+        padding: 50px;
+        color: coral;
+      }
 
         
 
       `}</style>
 
-      </body>
+      </div>
 
       )
   }
 
-  // Pass the page slug over to the "getSinglePost" function
-  // In turn passing it to the posts.read() to query the Ghost Content API
   PostPage.getInitialProps = async (params) => {
     const post = await getSinglePost(params.query.slug);
     return { post: post }
