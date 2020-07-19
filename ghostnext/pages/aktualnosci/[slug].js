@@ -14,28 +14,40 @@ const PostPage = (props) => {
           <NavbarThird></NavbarThird>
 
 
-            <div class="articleText">
-                <h1 class="introduction">{props.post.title}</h1>
-                <div dangerouslySetInnerHTML={{ __html: props.post.html }} />
-            </div>
+          <main>
+          <h1 class = "title">{props.post.title}</h1>
+          <div class = "grid-container">
+                  <div dangerouslySetInnerHTML={{ __html: props.post.html }} />
+          </div>
+        </main>
 
       <style jsx>{`
 
-      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
-      *{
-        font-family: 'Open Sans';
-        line-height: 170%;
-      }
-      body, p, h1, h2{
-        margin: 0;
-        padding: 0;
-      }
-      
-      .articleText{
+.title {
+  padding: 30px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: coral;
+}
 
-        padding: 50px;
-        color: coral;
-      }
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: sans-serif;
+  overflow:hidden;
+}
+h1 {
+  color: coral;
+}
+
+img {
+  width: 100%;
+  border-radius: 5px;
+}
+
 
         
 
