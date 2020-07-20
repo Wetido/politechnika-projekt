@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import logo from '../images/KNME.png';
+import logo from '../images/KNME_white.png';
 //Link odpowiada za dynamiczne przekierowywanie z 
 //folderu pages, na zasadzie np 
 //pages/post/index.js
@@ -14,6 +14,7 @@ const NavbarThird = () => (
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/> 
 </Head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <a class="navbar-brand " href="#" ><Link href={'/'}><img class="logo" src={logo}  alt=""/></Link></a>
@@ -42,7 +43,9 @@ const NavbarThird = () => (
 
   text-transform: uppercase;
   letter-spacing: 3px;
-  
+  color:white;
+  font-size:1.2em;
+  font-family:Roboto;
 }
 
 
