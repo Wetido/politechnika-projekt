@@ -1,5 +1,5 @@
 import { getSinglePost } from '../api/posts';
-import Navbar from'../../components/Navbar';
+import NavbarThird from'../../components/Navbar-third';
 
 //TU ZNAJDUJE SIĘ POJEDYNCZY POST GALERII
 
@@ -7,7 +7,7 @@ const PostPage = (props) => {
     // Render post title and content in the page from props
     return (
       <body>
-        <Navbar></Navbar>
+        <NavbarThird/>
         <main>
           <h1 class = "title">{props.post.title}</h1>
           <div class = "grid-container">
