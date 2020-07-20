@@ -6,8 +6,11 @@ import Carousel from '../components/new-gallery';
 import { getIndexPagePosts } from './api/posts';
 import Head from 'next/head';
 import NavbarThird from '../components/Navbar-third';
+import Workers from '../components/Workers';
 
 import Link from 'next/link';
+
+
 
 
 const NoSSRToolbar = dynamic( () => 
@@ -47,6 +50,7 @@ const IndexPage = (props) => (
         ))}
       </ul>
     </section>
+    <Workers/>
 
 
 
