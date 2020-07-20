@@ -8,7 +8,6 @@ import worker4 from '../images/machlarz_r.jpg';
 const Workers = () => (
 <div>
     <h2 class="worker-branch">Nasi Pracownicy</h2>
-    <br/>
     <div class="container-worker">
         
         <div class="worker">
@@ -30,8 +29,11 @@ const Workers = () => (
         <img class="worker-images" src={worker4} alt="First slide"/>
         <p>Młody chlop</p> 
         </div>
+        <div class="view-more-box">
 
         <Link href={'/aktualnosci'}><a class="view-more-worker">zobacz więcej</a></Link>
+        </div>
+
     </div>
 
     
@@ -41,10 +43,12 @@ const Workers = () => (
    .worker-branch{
 
         padding-left: 60px;
+        padding-top: 1em;
+        padding-bottom: 1em;
         text-transform: uppercase;
         letter-spacing: 2px;
         font-weight: bold;
-      
+
    }
 
 
@@ -78,14 +82,11 @@ const Workers = () => (
 
         border-radius:30%;
         border:2px solid black;
+        width: 75%;
+        height: 75%;
 
     }
 
-    .worker-images > img{
-
-        width: 90%;
-        heigth: 90%;
-    }
 
     .view-more-worker{
 
@@ -100,12 +101,26 @@ const Workers = () => (
         transition: 0.8s;
         position: relative:
         overflow: hidden;
-  
-  
       }
   
       .view-more-worker:hover {
           color: coral;
+      }
+
+      @media screen and (max-width: 1200px) {
+
+        .worker-images > img{
+
+            width: 70%;
+            height: 80%;
+        }
+
+        .view-more-worker{
+
+            
+            width: 30%;
+            height: 30%;
+        }
       }
 
 
@@ -118,25 +133,23 @@ const Workers = () => (
         }
       }
 
-      @media screen and (max-width: 1200px) {
-
-        .worker-images > img{
-
-            width: 70%;
-            heigth: 70%;
-        }
-      }
+     
   
       @media screen and (max-width: 768px) {
         .worker{
           
-            width: 90%;
-            margin: 0 auto;
+            width: 60%;
+            height: 60%;
         }
 
         .container-worker{
 
             align-items: center;
+        }
+
+        .view-more-box{
+            width:100%;
+            padding: 10px;
         }
       }
 
