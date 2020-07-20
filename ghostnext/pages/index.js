@@ -7,6 +7,7 @@ import { getIndexPagePosts } from './api/posts';
 import Head from 'next/head';
 import NavbarThird from '../components/Navbar-third';
 import Workers from '../components/Workers';
+import Footer from '../components/footer';
 
 import Link from 'next/link';
 
@@ -51,7 +52,7 @@ const IndexPage = (props) => (
       </ul>
     </section>
     <Workers/>
-
+    <Footer/>
 
 
   </div>
