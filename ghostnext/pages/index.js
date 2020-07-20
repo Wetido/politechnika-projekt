@@ -28,11 +28,12 @@ const IndexPage = (props) => (
   <div>
 
     <NavbarThird/>
+
+    <section class="padding-box">
     <Carousel/>
     
-    <section>
+
     <h2 class="news-branch">Aktualności</h2>
-    <br/>
     <ul class = "box">
 
         {props.posts.map(post => (
@@ -50,8 +51,8 @@ const IndexPage = (props) => (
           
         ))}
       </ul>
-    </section>
     <Workers/>
+    </section>
     <Footer/>
 
 
@@ -59,7 +60,12 @@ const IndexPage = (props) => (
 
   <style >{`
 
-  
+  .padding-box{
+
+    padding: 40px 80px 20px 80px;
+  }
+
+
   body {
     background: #f5f0f0;
 
@@ -68,6 +74,7 @@ const IndexPage = (props) => (
 
    .news-branch{
     padding-left: 60px;
+    padding-top: 1em;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
@@ -106,9 +113,8 @@ const IndexPage = (props) => (
       transition: 0.8s;
       position: relative:
       overflow:hidden;
-
-
     }
+
 
     .view-more:hover {
         color: coral;
@@ -118,11 +124,21 @@ const IndexPage = (props) => (
       .post-li{
         width: 45%;
       }
+
+      .padding-box{
+
+        padding: 40px 60px 10px 60px;
+      }
     }
 
     @media screen and (max-width: 768px) {
       .post-li{
         width: 90%;
+      }
+
+      .padding-box{
+
+        padding: 10px 20px 10px 20px;
       }
     }
 
