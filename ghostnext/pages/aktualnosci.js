@@ -20,16 +20,16 @@ const NewsPage = (props) => (
 
     <section>
     <ul class = "page">
-      <h2>Najnowsze posty</h2>
+      <h2 class="news-header">Najnowsze posty</h2>
+      <br/>
         {props.posts.map(post => (
 
-        <div class="archive">
+        <div class="post-div">
           <Link href={`/aktualnosci/[slug]`} as={`/aktualnosci/${post.slug}`}>
             
-            <li key={post.id} class="article">
-                <a class = "post-a"> <img class="image-shortcut" alt="" src={post.feature_image}></img></a>
+            <li key={post.id} class="post-article">
               <div>  
-                  <a class = "post-a">{post.title}</a>
+                  <h1 class = "post-title">{post.title}</h1>
                 <p>{post.excerpt}</p>  
               </div>
 
@@ -48,53 +48,56 @@ const NewsPage = (props) => (
     ///////////////////////////////
 
     body {
-      background: #001628;
-      color: #777;
-      padding: 4em;
-      font-family: sans-serif;
-      line-height: 1.15;
+     background: #f5f0f0;
+
+    }
+
+    .news-header{
+
+      padding-left: 20px;
+      font-size: 30px;
+    }
+
+    .post-title{
+
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+      font-size: 1.8rem;
     }
     
-    hr { /*dummy content*/
-      height: 6px;
-      border: none;
-      background: rgba(0, 0, 0, 0.1);
-    } 
-    
-    hr:last-child {  /*dummy content*/
-      margin-right: 60%;
-    }
-    
-    hr.image { /*dummy content*/
-      padding-bottom: 50%;
-    } 
-    
+   
     .page {
       padding: 2em;
-      background: #cecece;
-      max-width: 1100px;
-
       list-style: none;
     }
     
-    .archive {
+    .post-div {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       grid-gap: 1em;
+      padding: 1px;
     }
     
-    .article {
-      padding: 1em;
+    .post-article {
+      padding: 2em;
       background: #fff;
       box-shadow:
-        0 5px 10px rgba(0, 0, 0, 0.1),
-        0 20px 20px rgba(0, 0, 0, 0.05);
+        0 5px 10px rgba(0, 0, 0, 0.3),
+        -webkit-box-shadow: 9px 10px 76px -20px rgba(0,0,0,1);
+        -moz-box-shadow: 9px 10px 76px -20px rgba(0,0,0,1);
+        box-shadow: 9px 10px 76px -20px rgba(0,0,0,1);
+        transition: 0.2s;
+
     }
 
-    img{
+    .post-article:hover{
 
-      width: 100%;
-      heigth: 100%;
+      box-shadow:
+        2px rgba(0, 0, 0, 0.8),
+      padding: 3px;
+      margin: 5px;
+      cursor: pointer;
     }
 
     `}</style>

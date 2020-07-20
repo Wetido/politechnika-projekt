@@ -22,7 +22,8 @@ const NavbarThird = () => (
 </button>
 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
   <div class="navbar-nav">
-  <Link href={'/'}><a class="nav-item nav-link " > strona główna<span class="sr-only">(current)</span></a></Link>
+
+  <Link href={'/'}><a class="nav-item nav-link" > strona główna<span class="sr-only">(current)</span></a></Link>
   <Link href={'/o-katedrze'}><a class="nav-item nav-link" > o katedrze </a></Link>
   <Link href={'/aktualnosci'}><a class="nav-item nav-link " > aktualności</a></Link>
   <Link href={'/galeria'}><a class="nav-item nav-link " > galeria</a></Link>
