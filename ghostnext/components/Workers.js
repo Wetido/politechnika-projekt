@@ -11,90 +11,132 @@ const Workers = () => (
     <br/>
     <div class="container-worker">
         
-        <div class="worker worker-1">
+        <div class="worker">
         <img class="worker-images" src={worker1} alt="First slide"/>
+        <p>Slawny chlop</p> 
         </div>
         
-        <div class="worker worker-2">
+        <div class="worker">
         <img class="worker-images" src={worker2} alt="First slide"/>
+        <p>Madry chlop</p> 
         </div>
         
-        <div class="worker worker-3">
+        <div class="worker">
         <img class="worker-images" src={worker3} alt="First slide"/>
+        <p>Przystojny chlop</p> 
         </div>
         
-        <div class="worker worker-4">
+        <div class="worker">
         <img class="worker-images" src={worker4} alt="First slide"/>
+        <p>Młody chlop</p> 
         </div>
+
+        <Link href={'/aktualnosci'}><a class="view-more-worker">zobacz więcej</a></Link>
     </div>
-    <Link href={'/aktualnosci'}><a class="view-more-worker">zobacz więcej</a></Link>
+
     
    <style >{`
+
+
    .worker-branch{
-    padding-left: 60px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: bold;
+
+        padding-left: 60px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
       
    }
-   h2{
-       font:30px;
-   }
+
+
    .container-worker{
-    display:flex;
-    padding:5px;
-    justify-content:center;
+        display:flex;
+        flex-wrap: wrap;
+        padding:5px;
+        justify-content:center;
+        margin: 0 auto;
+        padding-left: 60px;
+        text-align: center;
     }
     
+
 
     .worker{
- 
-        padding:0px 100px 0px 100px;
+
+        width: 23%;
+        margin: 5px 5px 5px 5px;
     }
     
-    .worker-1{
-        
-     
-            
-              
-    }
-            
-    .worker-2{
-        
-    }
-            
-    .worker-3{
-             
-        }
-        .worker-4{
 
-        }
-    .view-more-worker{
-        position:absolute;
-        right:0;
-        padding-right:10%;
-        font-size:25px;
-        color:black;
-    }
+
     .view-more:hover{
         color:#CCCCCC;
         text-decoration:none;
     }
+
+    
     .worker-images{
+
         border-radius:30%;
         border:2px solid black;
+
     }
-    @media screen and (max-width: 1200px) {
-        .worker-images{
-          width:100%;
-          height:100%;
+
+    .worker-images > img{
+
+        width: 90%;
+        heigth: 90%;
+    }
+
+    .view-more-worker{
+
+        border: 1px solid #3498db;
+        background: none;
+        padding: 10px 20px;
+        font-size: 20px;
+        font family: "montserrat";
+        cusros: pointer;
+        margin: 10px;
+        color: #3498db;
+        transition: 0.8s;
+        position: relative:
+        overflow: hidden;
+  
+  
+      }
+  
+      .view-more-worker:hover {
+          color: coral;
+      }
+
+
+    @media screen and (max-width: 1000px) {
+
+        .worker{
+
+            width: 45%;
+            
+        }
+      }
+
+      @media screen and (max-width: 1200px) {
+
+        .worker-images > img{
+
+            width: 70%;
+            heigth: 70%;
         }
       }
   
       @media screen and (max-width: 768px) {
-        .worker-images{
-          width:100%;
-          height:100%;
+        .worker{
+          
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .container-worker{
+
+            align-items: center;
         }
       }
 

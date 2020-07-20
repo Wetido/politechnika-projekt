@@ -64,9 +64,7 @@ const IndexPage = (props) => (
     font-weight: bold;
    }
 
-   h2{
-       font:30px;
-   }
+
 
 
    .box{
@@ -99,7 +97,7 @@ const IndexPage = (props) => (
       color: #3498db;
       transition: 0.8s;
       position: relative:
-      overflow:hidden;
+      overflow: hidden;
 
 
     }
