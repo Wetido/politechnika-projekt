@@ -61,9 +61,11 @@ const Menu = () => (
   </ul>
 </div>
     <style >{`
+
+
 :root {
     --base-grid: 8px;
-    --colour-white: #fff;
+    --colour-white: #8793ab;
     --colour-black: #1a1a1a;
     --item-total:5;
     --angle: calc(360deg/var(--item-total));
@@ -81,10 +83,12 @@ const Menu = () => (
   
   body {
   
-    background-size: 112px 112px,112px 112px,56px 56px,56px 56px,28px 28px,28px 28px;
+
     font-family: Josefin Sans, sans-serif;
-      margin: 0;
+    margin: 0;
     padding: 0;
+    background: #f5f0f0;
+    overflow: hidden;
   }
   
   .links {
@@ -106,7 +110,7 @@ const Menu = () => (
     width: var(--link-size);
     height: var(--link-size);
     position: absolute;
-    top: 0;
+    top: -30px;
     left: 0;
     margin-top: calc(var(--link-size)/-2);
     margin-left: calc(var(--link-size)/-2);
@@ -116,27 +120,27 @@ const Menu = () => (
 
   .links__item1{
 
-    --rotation: calc(140deg + var(--angle)*1);
+    --rotation: calc(126deg + var(--angle)*1);
   }
 
   .links__item2{
 
-    --rotation: calc(140deg + var(--angle)*2);
+    --rotation: calc(126deg + var(--angle)*2);
   }
 
   .links__item3{
 
-    --rotation: calc(140deg + var(--angle)*3);
+    --rotation: calc(126deg + var(--angle)*3);
   }
 
   .links__item4{
 
-    --rotation: calc(140deg + (var(--angle)*4));
+    --rotation: calc(126deg + (var(--angle)*4));
   }
 
   .links__item5{
 
-    --rotation: calc(140deg + var(--angle)*5);
+    --rotation: calc(126deg + var(--angle)*5);
   }
   
   .links__link {

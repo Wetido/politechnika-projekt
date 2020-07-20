@@ -14,39 +14,55 @@ const PostPage = (props) => {
           <NavbarThird></NavbarThird>
 
 
-          <main>
+          <main class="single-post-box">
           <h1 class = "title">{props.post.title}</h1>
           <div class = "grid-container">
                   <div dangerouslySetInnerHTML={{ __html: props.post.html }} />
           </div>
         </main>
 
-      <style jsx>{`
+      <style>{`
 
-.title {
-  padding: 30px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: bold;
-  color: coral;
-}
+      .single-post-box{
 
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-family: sans-serif;
-  overflow:hidden;
-}
-h1 {
-  color: coral;
-}
+        padding: 30px;
+      }
 
-img {
-  width: 100%;
-  border-radius: 5px;
-}
+      .grid-container{
+
+        padding: 30px;
+      }
+
+      .title {
+        padding: 30px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: bold;
+        color: coral;
+      }
+
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: sans-serif;
+        overflow:hidden;
+      }
+      h1 {
+        color: coral;
+      }
+
+      img {
+        width: 100%;
+        border-radius: 5px;
+      }
+
+      .kg-bookmark-card {
+
+        width: 10%;
+        heigth: 10%;
+      }
 
 
         

@@ -44,7 +44,7 @@ const NavbarThird = () => (
   text-transform: uppercase;
   letter-spacing: 3px;
   color:white;
-  font-size:1.2em;
+  font-size:1em;
   font-family:Roboto;
 }
 
