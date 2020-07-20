@@ -57,13 +57,20 @@ const IndexPage = (props) => (
   </div>
 
   <style >{`
+
+  
+  body {
+    background: #f5f0f0;
+
+  }
+
+
    .news-branch{
     padding-left: 60px;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
    }
-
 
 
 
@@ -77,7 +84,7 @@ const IndexPage = (props) => (
     .post-li{
       padding: 25px 40px 25px 40px;
       width: 31%;
-      background-color: #e4e3e3;
+      background-color: #cecece;
       border-radius: 25px;
       margin: 10px 10px 10px 10px;
       align-items: center;
@@ -97,7 +104,7 @@ const IndexPage = (props) => (
       color: #3498db;
       transition: 0.8s;
       position: relative:
-      overflow: hidden;
+      overflow:hidden;
 
 
     }
